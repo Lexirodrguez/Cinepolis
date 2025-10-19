@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 18-10-2025 a las 04:52:36
+-- Tiempo de generación: 19-10-2025 a las 19:47:56
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.2.12
 
@@ -35,6 +35,15 @@ CREATE TABLE `funcion` (
   `id_salafuncion` int(11) NOT NULL,
   `id_horariofuncion` int(11) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `funcion`
+--
+
+INSERT INTO `funcion` (`id_funcion`, `fechahora_funcion`, `estado_funcion`, `id_peliculasfuncion`, `id_salafuncion`, `id_horariofuncion`) VALUES
+(1, '2023-06-15 22:00:00', 1, 1, 1, 1),
+(2, '2023-06-16 01:00:00', 1, 2, 2, 2),
+(3, '2023-06-16 01:00:00', 1, 3, 3, 3);
 
 -- --------------------------------------------------------
 
@@ -140,7 +149,7 @@ ALTER TABLE `sala`
 -- AUTO_INCREMENT de la tabla `funcion`
 --
 ALTER TABLE `funcion`
-  MODIFY `id_funcion` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_funcion` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `horario`
