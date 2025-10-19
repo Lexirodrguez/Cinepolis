@@ -5,7 +5,7 @@ var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 var mysql = require('msql2/promise');
 
-var peliculasRouter = require('./routes/peliculas')(mysql, dbConfig);
+var peliculasRouter = require('./routes/Peliculas')(mysql, dbConfig);
 var funcionesRouter = require('./routes/funciones')(mysql, dbConfig);
 
 var app = express();
@@ -29,13 +29,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
-app.use('/peliculas', (req, res) => {
-  res.render("peliculas");
+app.use('/Peliculas', (req, res) => {
+  res.render("Peliculas");
 });
 app.use('/funciones', (req, res) => {
   res.render('funciones');
 });
-app.use('/api/peliculas', peliculasRouter);
+app.use('/api/Peliculas', PeliculasRouter);
 app.use('/api/funciones', funcionesRouter);
 
 // catch 404 and forward to error handler
