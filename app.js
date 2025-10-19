@@ -3,11 +3,19 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var mysql = require('msql2/promise');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+var peliculasRouter = require('./routes/peliculas')(mysql, dbConfig);
+var funcionesRouter = require('./routes/funciones')(mysql, dbConfig);
 
 var app = express();
+
+const dbConfig = {
+  host:'127.0.0.1',
+  user:'root',
+  password:'',
+  database:'cinepolis',s
+};
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -21,6 +29,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/peliculas', (req, res) => {
+  res.render("peliculas");
+});
+app.use('/funciones', (req, res) => {
+  res.render('funciones');
+});
+app.use('/api/peliculas', peliculasRouter);
+app.use('/api/funciones', funcionesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
