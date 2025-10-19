@@ -3,21 +3,22 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
-var mysql = require('msql2/promise');
+const mysql = require('mysql2/promise');
+
+const dbConfig = {
+  host: 'localhost',
+  user: 'root',
+  password: '',
+  database: 'cinepolis',
+};
 
 var peliculasRouter = require('./routes/Peliculas')(mysql, dbConfig);
 var funcionesRouter = require('./routes/funciones')(mysql, dbConfig);
-
+var indexRouter = require('./routes/index');
+var usersRouter = require('./routes/users');
 var app = express();
 
-const dbConfig = {
-  host:'127.0.0.1',
-  user:'root',
-  password:'',
-  database:'cinepolis',
-};
 
-// view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
@@ -35,8 +36,8 @@ app.use('/Peliculas', (req, res) => {
 app.use('/funciones', (req, res) => {
   res.render('funciones');
 });
-app.use('/api/Peliculas', PeliculasRouter);
-app.use('/api/funciones', funcionesRouter);
+app.use('/api/Peliculas', peliculasRouter); 
+app.use('/api/funciones', funcionesRouter); 
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
