@@ -1,11 +1,55 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinepolis - Sistema de Gestión</title>
+    <link rel='stylesheet' href='/css/style.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+    <header>
+      <nav class="logo">Cinepolis</div>>
+        <div class="logo">Cinepolis</div>
+        <ul class="nav-links">
+          <li><a href="index.html" class="active">Incio</a></li>
+          <li><a href="peliculas.html">Películas</a></li>
+          <li><a href="funciones.html">Funciones</a></li>
+        </ul>
+      </nav>
+    </header>
+
+  <main class="container">
+      <section class="hero">
+        <h1>Bienvenido a Cinepolis</h1>
+        <p>Sistema de gestión de cine - Administra películas y funciones de manera eficiente</p>
+        <div style="margin-top: 2rem;">
+          <a href="peliculas.html" class="btn btn-primary">Gestionar Peliculas</a>
+          <a href="funciones.html" class="btn btn-primary">Gestionar Funciones</a>
+        </div>
+      </section> 
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
+          <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4 px 6px rgba(0,0,0,0.1);">
+            <h3 style="color: 667eea; margin-bottom: 1rem;">Películas</h3>
+            <p>Gestiona el catálogo de películas disponibles en el cine</p>
+            <a href="peliculas.html" class="btn btn-primary" style="margin-top: 1rem;">Administrar</a>
+          </div>
+
+      <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+        <h3 style="color: #667eea; margin-bottom: 1rem;">Funciones</h3>
+        <p>Programa y administra las funciones del cine</p>
+        <a href="funciones.html" class="btn btn-primary" style="margin-top: 1rem;">Administrar</a>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+        <div class="container">
+            <p>&copy; 2024 CinePolis - Sistema de Gestión. Todos los derechos reservados.</p>
+        </div>
+  </footer>
+
+    <script src="/js/script.js"></script>
+    s
   </body>
 </html>
