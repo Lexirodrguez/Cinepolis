@@ -1,55 +1,163 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cinepolis - Sistema de Gestión</title>
     <link rel='stylesheet' href='/css/style.css' />
-  </head>
-  <body>
+    <style>
+        * {
+            font-family: 'Arial', sans-serif;
+        }
+        
+        .hero-section {
+            text-align: center;
+            padding: 3rem 0;
+        }
+        
+        .hero-title {
+            font-size: 2.5rem;
+            color: #667eea;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 2rem;
+            max-width: 500px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 3rem;
+        }
+        
+        .action-btn {
+            padding: 0.8rem 1.5rem;
+            font-size: 1rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .action-btn:hover {
+            background: #5a6fd8;
+        }
+        
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .feature-card {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            border: 1px solid #e0e0e0;
+        }
+        
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-title {
+            color: #333;
+            margin-bottom: 0.8rem;
+            font-size: 1.2rem;
+            font-weight: normal;
+        }
+        
+        .feature-description {
+            color: #666;
+            line-height: 1.4;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .btn {
+            padding: 0.6rem 1.2rem;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-size: 0.9rem;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background: #5a6fd8;
+        }
+    </style>
+</head>
+<body>
     <header>
-
-        <div class="logo">Cinepolis</div>
-        <ul class="nav-links">
-          <li><a href="index" class="active">Incio</a></li>
-          <li><a href="peliculas">Películas</a></li>
-          <li><a href="funciones">Funciones</a></li>
-        </ul>
-
+        <nav class="container">
+            <div class="logo" style="font-family: Arial, sans-serif;">Cinepolis</div>
+            <ul class="nav-links">
+                <li><a href="/" class="active">Inicio</a></li>
+                <li><a href="/peliculas">Películas</a></li>
+                <li><a href="/salas">Salas</a></li>
+                <li><a href="/funciones">Funciones</a></li>
+            </ul>
+        </nav>
     </header>
 
-  <main class="container">
-      <section class="hero">
-        <h1>Bienvenido a Cinepolis</h1>
-        <p>Sistema de gestión de cine - Administra películas y funciones de manera eficiente</p>
-        <div style="margin-top: 2rem;">
-          <a href="peliculas" class="btn btn-primary">Gestionar Peliculas</a>
-          <a href="funciones" class="btn btn-primary">Gestionar Funciones</a>
+    <main class="container">
+        <section class="hero-section">
+            <h1 class="hero-title">Bienvenido a Cinepolis</h1>
+            <p class="hero-subtitle">Sistema de gestión para administrar películas, salas y funciones de tu cine</p>
+            
+            <div class="action-buttons">
+                <a href="/peliculas" class="action-btn">Películas</a>
+                <a href="/salas" class="action-btn">Salas</a>
+                <a href="/funciones" class="action-btn">Funciones</a>
+            </div>
+        </section>
+
+        <div class="features">
+            <div class="feature-card">
+                <div class="feature-icon">🎬</div>
+                <h3 class="feature-title">Películas</h3>
+                <p class="feature-description">Administra el catálogo completo de películas</p>
+                <a href="/peliculas" class="btn">Administrar</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">🎭</div>
+                <h3 class="feature-title">Salas</h3>
+                <p class="feature-description">Gestiona salas, capacidades y equipos</p>
+                <a href="/salas" class="btn">Administrar</a>
+            </div>
+
+            <div class="feature-card">
+                <div class="feature-icon">📅</div>
+                <h3 class="feature-title">Funciones</h3>
+                <p class="feature-description">Programa funciones y horarios</p>
+                <a href="/funciones" class="btn">Administrar</a>
+            </div>
         </div>
-      </section> 
+    </main>
 
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 3rem;">
-          <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4 px 6px rgba(0,0,0,0.1);">
-            <h3 style="color: #667eea; margin-bottom: 1rem;">Películas</h3>
-            <p>Gestiona el catálogo de películas disponibles en el cine</p>
-            <a href="peliculas" class="btn btn-primary" style="margin-top: 1rem;">Administrar</a>
-          </div>
-
-      <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-        <h3 style="color: #667eea; margin-bottom: 1rem;">Funciones</h3>
-        <p>Programa y administra las funciones del cine</p>
-        <a href="funciones" class="btn btn-primary" style="margin-top: 1rem;">Administrar</a>
-      </div>
-    </div>
-  </main>
-
-  <footer>
+    <footer>
         <div class="container">
-            <p>&copy; 2024 CinePolis - Sistema de Gestión. Todos los derechos reservados.</p>
+            <p style="font-family: Arial, sans-serif;">&copy; 2024 CinePolis - Sistema de Gestión</p>
         </div>
-  </footer>
-
-    <script src="/js/script.js"></script>
-    
-  </body>
+    </footer>
+</body>
 </html>

@@ -220,6 +220,7 @@ main {
     width: 90%;
     max-width: 500px;
     position: relative;
+    animation: modalSlideIn 0.3s ease;
 }
 
 .close {
@@ -244,6 +245,56 @@ footer {
     margin-top: 2rem;
 }
 
+@keyframes modalSlideIn {
+    from {
+        opacity: 0;
+        transform: translateY(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideIn {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Estilos para las alertas */
+.alert {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    color: white;
+    z-index: 1001;
+    animation: slideIn 0.3s ease;
+    font-weight: bold;
+}
+
+.alert-success {
+    background: #28a745;
+}
+
+.alert-error {
+    background: #dc3545;
+}
+
+/* Mejoras para botones en tabla */
+.data-table .btn {
+    padding: 0.5rem 1rem;
+    margin: 0 0.2rem;
+    font-size: 0.9rem;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .nav-links {
@@ -262,5 +313,20 @@ footer {
     
     .data-table {
         font-size: 0.9rem;
+    }
+}
+
+/* Asegurar que el modal se vea bien en móviles */
+@media (max-width: 480px) {
+    .modal-content {
+        margin: 10% auto;
+        padding: 1.5rem;
+        width: 95%;
+    }
+    
+    .alert {
+        right: 10px;
+        left: 10px;
+        text-align: center;
     }
 }
